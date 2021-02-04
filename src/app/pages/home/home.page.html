@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content ion-padding">
+  <ion-item>
+    <ion-label>Date of Surgery</ion-label>
+    <ion-datetime (ionChange)="checkDte()" displayFormat="MMM DD, YYYY HH:mm" [max]="maxDate" [min]="minDate" placeholder="Select Date" [(ngModel)]="selectedSurgeryDate"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Select Surguery Type</ion-label>
+    <ionic-selectable
+      placeholder="Surgery Type"
+      [(ngModel)]="selectedSurgeryType"
+      (onChange)="surgeryTypeOnChange($event)"
+      [canSearch]="true"
+      [items]="surgeryType"
+      itemValue="ProgramId"
+      itemTextField="ProgramName">
+    </ionic-selectable>
+  </ion-item>
+  <ion-item>
+    <ion-label>Select Facility Type</ion-label>
+    <ionic-selectable
+      placeholder="Facility Type"
+      [(ngModel)]="selectedFacility"
+      [canSearch]="true"
+      [items]="facilityType"
+      itemValue="Facilityid"
+      itemTextField="FacilityName">
+    </ionic-selectable>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-button [disabled]="(selectedSurgeryType && selectedFacility && selectedSurgeryDate) == null" (click)="submitSurgeryDetails()" slot="end" class="submitHome">Submit</ion-button>
+  </ion-item>
+  <ion-item lines="none" style="font-size: 12px;">
+    <ion-grid>
+      <ion-header>
+        <ion-row class="ion-align-items-center">
+          <ion-col size=3>
+            <div class="table-header">
+              Surgery Date
+            </div>
+          </ion-col>
+          <ion-col size=3>
+            <div class="table-header">
+              Surgery Type
+            </div>
+          </ion-col>
+          <ion-col size=3>
+            <div class="table-header">
+              Facility Type
+            </div>
+          </ion-col>
+          <ion-col size=3>
+            <div class="table-header">
+              Remove Row
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-header>
+      <!-- <ion-row *ngFor="let item of [].constructor(rowCount)"> -->
+      <ion-row *ngFor="let item of tblDetails">
+        <ion-col size=3>
+          <div>
+            {{ (item.ProgramDate == null || undefined) ? '-' : item.ProgramDate }}
+          </div>
+        </ion-col>
+        <ion-col size=3>
+          <div>
+            {{ (item.ProgramName == null || undefined) ? '-' : item.ProgramName }}
+          </div>
+        </ion-col>
+        <ion-col size=3>
+          <div>
+            <!-- {{ (tblFacilityType == null) ? '-' : tblFacilityType }} -->
+            N/A
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <!-- {{ (tblFacilityType == null) ? '-' : tblFacilityType }} -->
+            <ion-button color="danger" style="text-transform: capitalize; width: 40px; font-size: smaller;">Delete</ion-button>
+            <!-- N/A -->
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-card>
+  </ion-card>
+</ion-content>

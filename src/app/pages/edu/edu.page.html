@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Education</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card style="border-radius: 10px;">
+    <youtube-player [videoId]="cancer"  [height]=175 (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player>
+      <ion-card-header>
+        <ion-card-subtitle>Open for Care: Center for Cancer and Blood Disorders</ion-card-subtitle>
+      </ion-card-header>
+  </ion-card>
+  <ion-card style="border-radius: 10px;">
+    <youtube-player [videoId]="cancer1"  [height]=175 (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player>
+      <ion-card-header>
+        <ion-card-subtitle>Open for Care: Center for Cancer and Blood Disorders</ion-card-subtitle>
+      </ion-card-header>
+  </ion-card>
+  <ion-card style="border-radius: 10px;">
+    <youtube-player [videoId]="heart"  [height]=175 (ready)="savePlayer($event)" (change)="onStateChange($event)"></youtube-player>
+      <ion-card-header>
+        <ion-card-subtitle>Open for Care: Center for Heart Surgery</ion-card-subtitle>
+      </ion-card-header>
+  </ion-card>
+</ion-content>

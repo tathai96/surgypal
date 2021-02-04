@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>My Health</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let qz of quiz; let i = index">
+    <ion-card-header>
+      <ion-card-subtitle>{{ qz.questionName}}</ion-card-subtitle>
+      <!-- <ion-card-title>Card Title</ion-card-title> -->
+    </ion-card-header>
+    <ion-card-content *ngFor="let option of qz.options; let j = index" style="padding-right: 60px; padding-top: 0px;">
+      <!-- [ngStyle]="setBackGround(j,option)" -->
+      <ion-button *ngIf="qz.controlType === 'toggle'" [ngClass]="setBackGround(qz,option)" (click)="chosenOption(qz.questionNumber, j,option)" size="small" expand="block">{{ option }}</ion-button>
+      <ionic-selectable
+      *ngIf="qz.controlType === 'dropdown'"
+      placeholder="Water Intake"
+      [items]="qz.options">
+    </ionic-selectable>
+      <ion-input *ngIf="qz.controlType === 'input'" [placeholder]="option"></ion-input>
+
+      <ion-datetime *ngIf="qz.controlType === 'cal'" displayFormat="MMM DD, YYYY HH:mm" [max]="maxDate" [min]="minDate" [placeholder]="option"></ion-datetime>
+ 
+    </ion-card-content>
+  </ion-card>
+</ion-content>

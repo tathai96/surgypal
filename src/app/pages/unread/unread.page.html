@@ -1,0 +1,7 @@
+<ion-content>
+  <ion-card #unreadSms class="unreadSms" *ngFor="let dummy of dummyUnread">
+    <ion-card-content #unreadSms style="font-weight: bold;" (click)="dismissMessage(dummy.id)">
+      {{ dummy.body }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

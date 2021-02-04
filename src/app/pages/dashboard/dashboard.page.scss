@@ -1,0 +1,43 @@
+.goals-list {
+    font-size: medium;
+}
+
+.goal-submit, .goal-edit {
+    text-transform: capitalize;
+    font-weight: 500;
+    margin: 10px auto;
+    border: 1px solid black;
+    --border-radius: 0%;
+    --background: linear-gradient(315deg, #fc5296 0%, #f67062 74%) !important;;
+}
+
+// ion-checkbox {
+//     margin-right: 10px;
+// }
+
+// ion-item, ion-list {
+//     // --inner-padding-bottom: -20px
+//     --padding-end: 0;
+  
+//     --inner-padding-start: 0;
+//     --inner-padding-end: 0;
+    
+//     --min-height: 0;
+// }
+
+// goal-checkbox {
+//     margin-top: 0px !important;
+//     margin-bottom: 0px !important;
+// }
+
+// .goal-card {
+//     height: 50%;
+// }
+
+.goals-class {
+    font-size: revert;
+}
+
+ion-item {
+    height: 50px;
+}

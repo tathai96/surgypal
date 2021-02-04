@@ -1,0 +1,74 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+ion-toolbar {
+    --background: linear-gradient(315deg, #fc5296 0%, #f67062 74%) !important;
+}
+
+ion-menu-button {
+    --color: white;
+}
+
+.alert-btn-class {
+    --background: white;
+}
+
+h2.my-custom-class {
+    --background: green;
+}
+.my-custom-class {
+    .alert-head {
+        background: linear-gradient(315deg, #fc5296 0%, #f67062 74%);
+    }
+    .alert-button-group {
+        justify-content: center;
+    }
+    .alert-message {
+        padding-bottom: 0px;
+        ul {
+            list-style: none;
+            padding-left: 0px;
+            font-size: smaller;
+        }
+        ul li {
+            margin-bottom: 7px;
+        }
+        ul li:before {
+            color: orange;
+            content: '✓';
+            margin-right: 7px;
+        }
+    }
+    button.alert-button {
+        color: black;
+        background: linear-gradient(315deg, #efecec 0%, #f9aba4 74%);
+        border-radius: 25px;
+        font-size: smaller;
+        font-weight: bold;
+    }
+}

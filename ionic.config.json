@@ -1,0 +1,13 @@
+{
+  "name": "surgypal",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://admin.surgypal.com"
+    }
+  ]
+}

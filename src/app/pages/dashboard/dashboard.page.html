@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar class="dashboard-color">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Road to Recovery</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content *ngIf="loaded">
+      <div>
+        <div>
+          <div style="display: block">
+            <canvas baseChart [datasets]="bubbleChartData"
+              [options]="bubbleChartOptions"
+              [legend]="bubbleChartLegend"
+              [chartType]="bubbleChartType">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Date Schedule</ion-card-subtitle>
+      <ion-card-title>
+        {{ daysBeforeSurgery }}
+        ({{daysLeft}} days before surgery)
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card>
+    <ion-card-header style="padding-bottom: 0px;">
+      <ion-card-subtitle>Goals for Today</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content class="goal-card">
+      <div>
+        <ion-list>
+          <ion-item [disabled]="goals.CheckStatus == false" *ngFor="let goals of goals" lines="none" class="ion-no-padding goals-class">
+            <ion-checkbox class="goal-checkbox" slot="start" (ionChange)="onCheck($event, goals)"></ion-checkbox>
+            <ion-label class="goal-label ion-text-wrap">{{ goals.TaskName }}</ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-item lines="none">
+          <ion-button class="goal-edit" (click)="editGoals($event)">Edit</ion-button>
+          <ion-button class="goal-submit" (click)="submitGoals($event)">Mark as Completed</ion-button>
+        </ion-item>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<!-- <ion-content>
+  <ion-item>
+    <div>
+      <div>
+        <div style="display: block">
+          <canvas baseChart [datasets]="bubbleChartData"
+            [options]="bubbleChartOptions"
+            [colors]="bubbleChartColors"
+            [legend]="bubbleChartLegend"
+            [chartType]="bubbleChartType">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </ion-item>
+</ion-content> -->

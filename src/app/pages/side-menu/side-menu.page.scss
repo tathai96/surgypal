@@ -1,0 +1,9 @@
+.active-item {
+    border-left: 8px solid var(--ion-color-primary);
+}
+
+ion-menu{
+    ion-content{
+        --ion-background-color: linear-gradient(315deg, #fba8a4 0%, #dad2f3 74%)
+    }
+}

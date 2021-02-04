@@ -1,0 +1,58 @@
+<ion-content [scrollEvents]="true">
+  <div id="parent">
+    <form id="login_form" (ngSubmit)="register_form()" [formGroup]="registrationForm">
+      <div style="text-align: center;">
+        <img src="../../../assets/login_logo.JPG" alt="app-logo" height="100px">
+      </div>
+      <ion-item lines="none">
+        <ion-label style="font-weight: bolder;">
+          <p>Patient Registration</p>
+          <small>Please enter all fields below</small>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none" id="patient-input">
+        <ion-icon style="margin-right: 10px;" name="person-circle-outline"></ion-icon>
+        <ion-input type="text" placeholder="Patient Name"></ion-input>
+      </ion-item>
+      <ion-item lines="none" id="email-input">
+        <ion-icon style="margin-right: 10px;" name="mail-outline"></ion-icon>
+        <ion-input type="email" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item lines="none" id="phone-input">
+        <ion-icon style="margin-right: 10px;" name="call-outline"></ion-icon>
+        <ion-input type="number" placeholder="Patient Phone Number"></ion-input>
+      </ion-item>
+      <ion-item lines="none" id="dob-input">
+        <ion-icon style="margin-right: 10px;" name="calendar-outline"></ion-icon>
+        <ion-datetime placeholder="Date of Birth"></ion-datetime>
+      </ion-item>
+      <ion-item lines="none" id="password-input">
+        <ion-icon style="margin-right: 10px;" name="lock-closed-outline"></ion-icon>
+        <ion-input type="password" placeholder="Password"></ion-input>
+      </ion-item>
+      <ion-item no-padding lines="none" id="confirm-password-input">
+        <ion-icon style="margin-right: 10px;" name="lock-closed-outline"></ion-icon>
+        <ion-input type="password" placeholder="Confirm Password"></ion-input>
+      </ion-item>
+      <!-- <div style="display: flex; justify-content: space-between; margin: -15px 0px;">
+        <ion-item lines="none">
+          <ion-checkbox></ion-checkbox>
+          <ion-label style="margin-left: 6px;">Remember Me</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label style="padding: 8px 0px;">Reset Password</ion-label>
+        </ion-item>
+      </div> -->
+      <ion-item lines="none">
+        <button style="font-weight: bolder; color: white;" type="button" class="login_button">SUBMIT</button>
+      </ion-item>
+      <ion-item style="text-align: center;" lines="none">
+        <ion-label>
+          <a routerLink="/login" routerDirection="backward">
+            <small>Back to login</small>
+          </a>
+        </ion-label>
+      </ion-item>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,22 @@
+{
+  "surgeryType": [
+    { "id": 0, "name": "Appendectomy" },
+    { "id": 1, "name": "Breast Biopsy" },
+    { "id": 2, "name": "Carotid Endarterectomy" },
+    { "id": 3, "name": "Cararact Surgery" },
+    { "id": 4, "name": "Cesarean Section" },
+    { "id": 5, "name": "Cholecystectomy" },
+    { "id": 6, "name": "Artery Bypass" },
+    { "id": 7, "name": "Hysterectomy" },
+    { "id": 8, "name": "Hernia Surgery" },
+    { "id": 9, "name": "Tonsillectomy" },
+    { "id": 10, "name": "Mastectomy" }
+  ],
+  "facilityType": [
+    { "id": 0, "name": "Apollo" },
+    { "id": 1, "name": "Columbia Asia" },
+    { "id": 2, "name": "Medical College Hospital" },
+    { "id": 3, "name": "Narayana Hospital" },
+    { "id": 4, "name": "Vikrant Jesta" }
+  ]
+}
